@@ -86,7 +86,7 @@ export class AddCitizen extends React.Component<Props, State> {
           );
         });
       } catch {
-        alert("Failed to add Citizen. Please try again. Please try again.");
+        alert("Failed to add Citizen. Please try again.");
       }
     }
   }
