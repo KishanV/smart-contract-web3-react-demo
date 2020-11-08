@@ -8,20 +8,23 @@ import { CitizenModel } from "../../reducers/citizen/citizen-model";
 import web3 from "../../web3-handler/index";
 import { CitizenController } from "../../reducers/citizen";
 import { Button } from "../../components/button";
+import * as History from "history";
 
-export type PostsProps = {
+export type Props = {
   reduxDispatch: any;
   citizens: CitizenModel[] | undefined;
+  location: History.Location;
+  history: History.History;
 };
 
-export type PostsState = {
+export type State = {
   fetching: boolean;
   count: number;
   currentPage: number;
 };
 
-class Home extends React.Component<PostsProps, any> {
-  state: PostsState = {
+class Home extends React.Component<Props, any> {
+  state: State = {
     fetching: false,
     currentPage: 1,
     count: 0,
@@ -29,6 +32,13 @@ class Home extends React.Component<PostsProps, any> {
 
   constructor(props: any) {
     super(props);
+    const query = new URLSearchParams(this.props.location.search);
+    const page = query.get("page");
+    if (!page) {
+      this.props.history.push("/?page=1");
+    } else {
+      this.state.currentPage = parseInt(page);
+    }
   }
 
   getBody() {
@@ -42,7 +52,9 @@ class Home extends React.Component<PostsProps, any> {
               <Button
                 text={"Add Citizen"}
                 onClick={() => {
-                  window.location.href = "/#/add-citizen";
+                  this.props.history.push(
+                    "add-citizen" + this.props.location.search
+                  );
                 }}
               />
             </div>
@@ -51,6 +63,8 @@ class Home extends React.Component<PostsProps, any> {
                 this.props.citizens.map((data, index) => {
                   return (
                     <CitizenCard
+                      history={this.props.history}
+                      location={this.props.location}
                       reduxDispatch={this.props.reduxDispatch}
                       data={data}
                       key={data.index.toString()}
@@ -60,6 +74,7 @@ class Home extends React.Component<PostsProps, any> {
             </div>
             <Pagination
               onChange={(newPageNumber) => {
+                this.props.history.push("?page=" + newPageNumber);
                 this.setState(
                   {
                     currentPage: newPageNumber,

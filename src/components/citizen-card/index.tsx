@@ -4,12 +4,15 @@ import { User, FileText } from "react-feather";
 import { CitizenModel } from "../../reducers/citizen/citizen-model";
 import web3Handler from "../../web3-handler";
 import { NoteController } from "../../reducers/note";
+import * as History from "history";
 
 interface State {}
 
 interface Props {
   data: CitizenModel;
   reduxDispatch: any;
+  location: History.Location;
+  history: History.History;
 }
 
 export class CitizenCard extends React.Component<Props, State> {
@@ -46,8 +49,10 @@ export class CitizenCard extends React.Component<Props, State> {
                     note: note,
                     citizen: this.props.data,
                   })
+                ); 
+                this.props.history.push(
+                  "note" + this.props.location.search
                 );
-                location.href = "/#/note";
               } catch {
                 alert("Internal Error. Please try again.");
               }

@@ -19,7 +19,7 @@ class App extends React.Component<any, AppState> {
     return (
       <>
         <div className={"app"}>
-          <Home />
+          <Home history={this.props.history} location={this.props.location} />
         </div>
         <Switch>
           <Route path="/add-citizen" component={AddCitizen} />

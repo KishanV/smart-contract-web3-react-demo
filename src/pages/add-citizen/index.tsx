@@ -3,6 +3,7 @@ import "./index.scss";
 import { XCircle } from "react-feather";
 import { Button } from "../../components/button";
 import web3Handler from "../../web3-handler";
+import * as History from "history";
 
 const RegExNum = /^[0-9\b]+$/;
 
@@ -20,7 +21,10 @@ interface State {
   show: boolean;
 }
 
-interface Props {}
+interface Props {
+  location: History.Location;
+  history: History.History;
+}
 
 export class AddCitizen extends React.Component<Props, State> {
   state: State = {
@@ -75,7 +79,7 @@ export class AddCitizen extends React.Component<Props, State> {
           note: this.state.note,
           index: -1,
         });
-        location.href = "/#/";
+        this.props.history.push("/" + this.props.location.search);
         setTimeout(() => {
           alert(
             `Citizen added successfully. It may take a minute to appear in database.\nYou can reload page to see it.`
@@ -118,7 +122,7 @@ export class AddCitizen extends React.Component<Props, State> {
             Add Citizen
             <div
               onClick={() => {
-                window.location.href = "/#/";
+                this.props.history.push("/" + this.props.location.search);
               }}
               className={"close"}
             >

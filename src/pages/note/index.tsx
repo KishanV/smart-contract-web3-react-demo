@@ -5,13 +5,15 @@ import { Button } from "../../components/button";
 import { connect } from "react-redux";
 import { ReduxType } from "../../reducers";
 import { NoteModel } from "../../reducers/note/note-model";
-
+import * as History from "history";
 interface State {
   show: boolean;
 }
 
 interface Props {
   note?: NoteModel;
+  location: History.Location;
+  history: History.History;
 }
 
 class Note extends React.Component<Props, State> {
@@ -39,7 +41,7 @@ class Note extends React.Component<Props, State> {
             Add Citizen
             <div
               onClick={() => {
-                window.location.href = "/#/";
+                this.props.history.push("/" + this.props.location.search);
               }}
               className={"close"}
             >
@@ -51,7 +53,7 @@ class Note extends React.Component<Props, State> {
             <Button
               text={"Ok"}
               onClick={() => {
-                window.location.href = "/#/";
+                this.props.history.push("/" + this.props.location.search);
               }}
               className={"submit"}
             />
