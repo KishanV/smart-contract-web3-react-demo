@@ -1,0 +1,59 @@
+.row {
+  position: relative;
+  float: left;
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  > .col {
+    display: flex;
+    height: auto;
+    flex: 1;
+
+    @for $i from 0 through 10 {
+      &-#{$i} {
+        flex: #{$i};
+      }
+    }
+  }
+}
+
+@for $i from 0 through 50 {
+  .p#{$i} {
+    padding: #{$i}px;
+  }
+
+  .pt-#{$i} {
+    padding-top: #{$i}px;
+  }
+  .pl-#{$i} {
+    padding-left: #{$i}px;
+  }
+  .pb-#{$i} {
+    padding-bottom: #{$i}px;
+  }
+  .pr-#{$i} {
+    padding-right: #{$i}px;
+  }
+
+  .m-#{$i} {
+    margin: #{$i}px;
+  }
+
+  .mt-#{$i} {
+    margin-top: #{$i}px;
+  }
+  .ml-#{$i} {
+    margin-left: #{$i}px;
+  }
+  .mb-#{$i} {
+    margin-bottom: #{$i}px;
+  }
+  .mr-#{$i} {
+    margin-right: #{$i}px;
+  }
+}
+
+.fancy-hover:hover {
+  border: 1px solid rgba(2, 52, 216, 0.719);
+  box-shadow: 0 0 0px 4px rgba(2, 52, 216, 0.2);
+}

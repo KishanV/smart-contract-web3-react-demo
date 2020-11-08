@@ -1,0 +1,96 @@
+.web3 {
+  height: auto;
+  position: relative;
+  width: 100%;
+  float: left;
+  box-sizing: border-box;
+  font-size: 14px;
+  > .address {
+    width: 100%;
+    height: 50px;
+    line-height: 50px;
+    text-align: center;
+    border-bottom: 1px solid #ddd;
+  }
+  > .citizens {
+    > .header {
+      height: 36px;
+      width: 100%;
+      line-height: 36px;
+      box-sizing: border-box;
+      float: left;
+      position: relative;
+      padding-left: 50px;
+      padding-right: 50px;
+      margin-top: 20px;
+      margin-bottom: 4px;
+      > .add-button {
+        background-color: #fff;
+        height: 34px;
+        width: auto;
+        position: relative;
+        float: right;
+        border: 1px solid #eee;
+        border-radius: 5px;
+        cursor: pointer;
+        padding-left: 10px;
+        padding-right: 10px;
+        line-height: 34px;
+        transition: 150ms all;
+        box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12), 0 1px 2px rgba(0, 0, 0, 0.24);
+        &:hover {
+          background-color: #3d5afe;
+          border: 1px solid #3d5afe;
+          border-radius: 4px;
+          color: #fff;
+          box-shadow: 0px 0px 0px 3px rgba(0, 67, 253, 0.3),
+            0px 0px 30px 0 rgba(0, 0, 0, 0.1);
+        }
+      }
+    }
+    > .list {
+      width: 100%;
+      position: relative;
+      float: left;
+      height: auto;
+      box-sizing: border-box;
+      padding: 30px;
+      padding-top: 0px;
+      display: flex;
+      flex-wrap: wrap;
+    }
+  }
+}
+body > .container > .app {
+  .error {
+    color: red;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 120px;
+  }
+  .enable-button {
+    position: relative;
+    background-color: #fff;
+    border: 1px solid #d4d4d4;
+    box-sizing: border-box;
+    border-radius: 4px;
+    margin: auto;
+    height: fit-content;
+    display: table;
+    max-width: 100%;
+    font-size: 15px;
+    min-width: 100px;
+    text-align: center;
+    line-height: 30px;
+    margin-top: 10px;
+    cursor: pointer;
+    &:hover {
+      background-color: #3d5afe;
+      border: 1px solid #3d5afe;
+      border-radius: 4px;
+      color: #fff;
+      box-shadow: 0px 0px 0px 3px rgba(0, 67, 253, 0.3),
+        0px 0px 30px 0 rgba(0, 0, 0, 0.1);
+    }
+  }
+}
