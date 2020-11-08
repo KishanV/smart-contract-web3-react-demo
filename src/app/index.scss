@@ -1,0 +1,15 @@
+body > .container > .app {
+  min-height: 300px;
+  position: relative;
+  width: 1024px;
+  max-width: 1080px;
+  background-color: #f5f5f5;
+  border: 1px solid #d4d4d4;
+  box-sizing: border-box;
+  border-radius: 14px;
+  margin: auto;
+  height: fit-content;
+  display: table;
+  max-width: 100%;
+  font-size: 15px;
+}

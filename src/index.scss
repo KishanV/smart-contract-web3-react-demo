@@ -1,0 +1,28 @@
+body {
+  background: #ddd;
+  color: #444;
+  cursor: default;
+  font-family: "Roboto";
+  font-size: 12px;
+  height: 100%;
+  margin: 0;
+  overflow: hidden;
+  position: absolute;
+  user-select: none;
+  width: 100%;
+
+  > .container {
+    height: 100%;
+    position: absolute;
+    width: 100%;
+    z-index: 1;
+    overflow-y: auto;
+    box-sizing: border-box;
+    padding: 20px;
+  }
+}
+
+@font-face {
+  font-family: "Roboto";
+  src: url("../fonts/roboto-regular-webfont.woff") format("woff");
+}
