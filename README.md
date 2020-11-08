@@ -4,7 +4,7 @@
 <br/>
 ### http://citizens-smart-contract.surge.sh
 <br/>
-<a href="https://youtu.be/7BZgPEu7sK8" target="_blank"><img src="https://raw.githubusercontent.com/KishanV/smart-contract-web3-react-demo/main/imgs/thumb.png" 
+<a href="https://youtu.be/7BZgPEu7sK8" target="_blank"><img src="https://raw.githubusercontent.com/KishanV/smart-contract-web3-react-demo/main/imgs/video-preview.png" 
 width="100%" alt='' border="10" /></a>
 
 ### blockchain info & links
