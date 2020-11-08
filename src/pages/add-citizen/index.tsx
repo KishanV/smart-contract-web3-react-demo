@@ -64,7 +64,7 @@ export class AddCitizen extends React.Component<Props, State> {
       isFormValid = false;
     }
     if (this.state.note.trim() === "") {
-      this.state.error.note = "Name should not be empty.";
+      this.state.error.note = "Note should not be empty.";
       isFormValid = false;
     }
 
