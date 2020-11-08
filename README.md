@@ -32,4 +32,4 @@ width="100%" alt='' border="10" /></a>
 
 1. install Metamask in your google chrome browser.
 2. use url to view ui in browser http://localhost:16000
-3. for online vinson open this url http://citizens-smart-contract.surge.sh
+3. for online version open this url http://citizens-smart-contract.surge.sh
