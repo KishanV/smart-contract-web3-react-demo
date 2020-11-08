@@ -111,9 +111,12 @@ class Home extends React.Component<Props, any> {
         <div
           onClick={async () => {
             try {
-              web3.enable();
-              this.loadLib();
-            } catch {}
+              await web3.enable();
+              window.location.reload();
+            } catch (error) {
+              console.error(error);
+              alert("Failed to connect Metamask. please try again.");
+            }
           }}
           className="enable-button"
         >

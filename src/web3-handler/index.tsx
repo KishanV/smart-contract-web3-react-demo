@@ -19,7 +19,7 @@ class Web3Handler {
   }
 
   async enable() {
-    win.ethereum.enable();
+    await win.ethereum.enable();
   }
 
   load() {
