@@ -48,13 +48,12 @@ class Home extends React.Component<PostsProps, any> {
             </div>
             <div className="list">
               {this.props.citizens &&
-                this.props.citizens.map((item, index) => {
+                this.props.citizens.map((data, index) => {
                   return (
                     <CitizenCard
-                      key={index + this.state.currentPage * 6}
-                      name={item.name}
-                      age={item.id}
-                      city={item.city}
+                      reduxDispatch={this.props.reduxDispatch}
+                      data={data}
+                      key={data.index.toString()}
                     />
                   );
                 })}

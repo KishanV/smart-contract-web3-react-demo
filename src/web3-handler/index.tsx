@@ -43,11 +43,24 @@ class Web3Handler {
     });
   }
 
+  async getNoteByCitizenIndex(index: number): Promise<any> {
+    return new Promise((resolve, reject) => {
+      this.contract.getNoteByCitizenIndex(index, (error: any, data: any) => {
+        if (error) {
+          reject(error);
+        } else {
+          resolve(data);
+        }
+      });
+    });
+  }
+
   async getCitizens(from: number, to: number): Promise<any> {
     return new Promise((resolve, reject) => {
       let count = from;
       let list: CitizenModel[] = [];
       for (let index = from; index < to; index++) {
+        const _index = index;
         this.contract.getCitizenByIndex(index, (error: any, data: any) => {
           count++;
           list.push({
@@ -55,12 +68,13 @@ class Web3Handler {
             name: data[1],
             age: data[2].c[0],
             city: data[3],
+            index: _index,
           });
 
           if (count === to) {
             resolve(
               list.sort((a, b) => {
-                return a.id - b.id;
+                return a.index - b.index;
               })
             );
           }

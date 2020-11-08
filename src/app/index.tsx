@@ -6,6 +6,7 @@ import { appStore } from "../reducers";
 import { HashRouter, Route, Switch } from "react-router-dom";
 import Home from "../pages/home";
 import { AddCitizen } from "../pages/add-citizen";
+import Note from "../pages/note";
 
 export type AppState = {};
 
@@ -22,6 +23,7 @@ class App extends React.Component<any, AppState> {
         </div>
         <Switch>
           <Route path="/add-citizen" component={AddCitizen} />
+          <Route path="/note" component={Note} />
         </Switch>
       </>
     );

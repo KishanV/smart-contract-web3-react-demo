@@ -47,9 +47,39 @@
     padding-bottom: 10px;
     font-size: 12px;
     > .row {
-      > .lable {
+      > .label {
         color: #999;
         margin-right: 5px;
+      }
+    }
+    > .note {
+      position: absolute;
+      bottom: 9px;
+      right: 8px;
+      width: 30px;
+      height: 30px;
+      border-radius: 4px;
+      svg {
+        position: absolute;
+        top: 5px;
+        left: 5px;
+        width: 20px;
+        height: 20px;
+      }
+      path,
+      polyline,
+      line {
+        color: #3d5afe;
+        stroke-width: 1px;
+      }
+      &:hover {
+        background-color: #3d5afe;
+        path,
+        polyline,
+        line {
+          color: #fff;
+          stroke-width: 1px;
+        }
       }
     }
   }

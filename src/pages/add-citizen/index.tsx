@@ -17,6 +17,7 @@ interface State {
     city?: string;
     note?: string;
   };
+  show: boolean;
 }
 
 interface Props {}
@@ -28,10 +29,19 @@ export class AddCitizen extends React.Component<Props, State> {
     city: "",
     note: "",
     error: {},
+    show: false,
   };
 
   constructor(props: any) {
     super(props);
+  }
+
+  componentDidMount() {
+    setTimeout(() => {
+      this.setState({
+        show: true,
+      });
+    }, 10);
   }
 
   async submitForm() {
@@ -63,6 +73,7 @@ export class AddCitizen extends React.Component<Props, State> {
           age: parseInt(this.state.age),
           city: this.state.city,
           note: this.state.note,
+          index: -1,
         });
         location.href = "/#/";
         setTimeout(() => {
@@ -101,7 +112,7 @@ export class AddCitizen extends React.Component<Props, State> {
 
   render() {
     return (
-      <div className={"add-citizen"}>
+      <div className={"add-citizen" + (this.state.show ? " show" : "")}>
         <div className={"form"}>
           <div className={"header"}>
             Add Citizen

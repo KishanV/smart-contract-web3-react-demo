@@ -4,4 +4,5 @@ export type CitizenModel = {
   age: number;
   city: string;
   note?: string;
+  index: number;
 };
