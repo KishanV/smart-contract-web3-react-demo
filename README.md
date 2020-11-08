@@ -1,6 +1,6 @@
 # smart-contract-web3-react-demo
 
- Implementation of ethereum smart contract read/write by web3 with metamask. to view online demo please visit this link. you can also watch youtube demo by clicking bellow thumbnail.
+ Implementation of ethereum smart contract read/write by web3 with metamask. to visit online demo please click below link. you can also watch screen recording demo by clicking below thumbnail.
 <br/>
 ### http://citizens-smart-contract.surge.sh
 <br/>
@@ -31,5 +31,5 @@ width="100%" alt='' border="10" /></a>
 ### How to run
 
 1. install Metamask in your google chrome browser.
-2. use url to view ui in browser http://localhost:16000
+2. use url to view UI in browser http://localhost:16000
 3. for online version open open this url http://citizens-smart-contract.surge.sh
