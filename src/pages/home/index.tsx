@@ -67,7 +67,7 @@ class Home extends React.Component<Props, any> {
                       location={this.props.location}
                       reduxDispatch={this.props.reduxDispatch}
                       data={data}
-                      key={data.index.toString()}
+                      key={data.id.toString()}
                     />
                   );
                 })}
