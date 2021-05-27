@@ -141,7 +141,7 @@ class Home extends React.Component<Props, any> {
   async loadCitizens() {
     const from = (this.state.currentPage - 1) * 6;
     const to = from + 6 > this.state.count ? this.state.count : from + 6;
-    const data = await web3.getCitizens(from, to);
+    const data = await web3.getCitizens(from, parseInt(to as any));
     this.props.reduxDispatch(CitizenController.setData(data));
   }
 

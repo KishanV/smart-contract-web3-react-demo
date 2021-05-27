@@ -71,21 +71,25 @@ export class AddCitizen extends React.Component<Props, State> {
     this.setState({});
     if (isFormValid) {
       try {
-        await web3Handler.addCitizen({
-          id: (await web3Handler.getCount()) + 1,
-          name: this.state.name,
-          age: parseInt(this.state.age),
-          city: this.state.city,
-          note: this.state.note,
-          index: -1,
-        });
+        web3Handler
+          .addCitizen({
+            id: (await web3Handler.getCount()) + 1,
+            name: this.state.name,
+            age: parseInt(this.state.age),
+            city: this.state.city,
+            note: this.state.note,
+            index: -1,
+          })
+          .on("transactionHash", async (hash: string) => {
+            setTimeout(() => {
+              alert(
+                `Citizen added successfully. It may take a minute to appear in database.\nYou can reload page to see it.`
+              );
+            });
+          });
         this.props.history.push("/" + this.props.location.search);
-        setTimeout(() => {
-          alert(
-            `Citizen added successfully. It may take a minute to appear in database.\nYou can reload page to see it.`
-          );
-        });
-      } catch {
+      } catch (error) {
+        console.log(error);
         alert("Failed to add Citizen. Please try again.");
       }
     }
